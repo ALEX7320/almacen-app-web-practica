@@ -1,3 +1,5 @@
+# Proyecto de Practica: Control de almacén
+
 ng serve --proxy-config proxy.conf.json
 
 #### DOCUMENTACIÓN Y GUÍA
@@ -18,3 +20,8 @@ npm install sweetalert2
 npm install bootstrap-grid-only-css --save
 npm install jquery — save
 ```
+
+
+#### ICONOS
+* https://www.flaticon.es
+* https://www.craiyon.com
