@@ -1,0 +1,41 @@
+
+.card-titulo-page {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  height: 400px;
+
+}
+.card-titulo-page * {
+  z-index: 2;
+}
+.card-titulo-page img {
+  z-index: 0;
+}
+.card-titulo-page::before,
+.card-titulo-page::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  z-index: 1;
+}
+.card-titulo-page-text {
+  position: absolute;
+  inset: 20px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-family: PT Sans, sans-serif;
+  line-height: 1.5em;
+  font-size: 25px;
+  font-weight: 700;
+  color: white;
+}
+.card-titulo-page img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 7px;
+}

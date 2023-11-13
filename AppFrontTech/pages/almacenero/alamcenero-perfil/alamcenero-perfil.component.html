@@ -1,0 +1,99 @@
+
+  
+<div class="container-fluid px-4">
+
+    <h1 class="mt-4">Usuario</h1>
+    <div class="d-flex bd-highlight">
+      <div class="p-2 flex-grow-1 bd-highlight">
+        <ol class="breadcrumb mb-4">
+          <li class="breadcrumb-item active">Perfil</li>
+        </ol>
+      </div>
+    </div>
+  
+    <!-- CUADRO 1 INICIO -->
+    <div class="card mb-4">
+      <div class="card-header">
+        <i class="fas fa-chart-area me-1"></i>
+        Detalles 
+      </div>
+      <div class="card-body">
+  
+        <form *ngIf="user">
+
+          <mat-form-field class="full-width"  appearance = "outline">
+            <mat-label>Nombre</mat-label>
+            <input required [(ngModel)] = "user.nombre" name = "nombre" matInput placeholder="Digite su nombre" readonly>
+          </mat-form-field>
+
+          <mat-form-field class="full-width"  appearance = "outline">
+            <mat-label>Apellido</mat-label>
+            <input required [(ngModel)] = "user.apellido" name = "apellido" matInput placeholder="Digite su apellido" readonly>
+          </mat-form-field>
+
+          <div class="row">
+            <div class="col-md-6">
+              <mat-form-field class="full-width"  appearance = "outline">
+                <mat-label>Email</mat-label>
+                <input required [(ngModel)] = "user.email" name = "email" type="email" matInput placeholder="Digite su email" readonly>
+              </mat-form-field> 
+            </div>
+
+            <div class="col-md-6">
+              <mat-form-field class="full-width"  appearance = "outline">
+                <mat-label>Telefono</mat-label>
+                <input required [(ngModel)] = "user.telefono" name = "telefono" matInput placeholder="Digite su telefono" readonly>
+              </mat-form-field>
+            </div>
+          </div>
+
+
+          
+          <mat-form-field class="full-width"  appearance = "outline">
+            <mat-label>Dirección</mat-label>
+            <input required [(ngModel)] = "user.direccion" name = "direccion" matInput placeholder="Digite su direccion" readonly>
+          </mat-form-field>
+
+
+
+          <div class="row">
+            <div class="col-md-6">
+              <mat-form-field class="full-width"  appearance = "outline">
+                <mat-label>DNI</mat-label>
+                <input required [(ngModel)] = "user.dni" name = "dni" matInput placeholder="Digite su dni" readonly>
+              </mat-form-field>    
+            </div>
+
+            <div class="col-md-6">
+                 <mat-form-field class="full-width"  appearance = "outline">
+                <mat-label>ROL</mat-label>
+                <input name = "rol_false" matInput placeholder="Digite su direccion" [value]="user.roles[0].rolNombre" readonly>
+              </mat-form-field>
+              
+            </div>
+          </div>
+
+        
+          <div class="row">
+            <div class="col-md-6">
+        
+              <mat-form-field class="full-width"  appearance = "outline">
+                <mat-label>Nombre de usuario</mat-label>
+                <input               
+                required name = "username" matInput placeholder="Digite su nombre de usuario"
+                autocomplete="off" value="{{user.username}}" readonly
+                >
+              </mat-form-field>
+
+            </div>
+
+          </div>
+
+        </form> 
+        
+      </div>
+    </div>
+    <!-- CUADRO 1 FIN -->
+  
+</div>
+  

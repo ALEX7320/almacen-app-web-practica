@@ -1,0 +1,70 @@
+
+<div class="container-fluid px-4">
+
+  <h1 class="mt-4">Proveedor</h1>
+  <div class="d-flex bd-highlight">
+    <div class="p-2 flex-grow-1 bd-highlight">
+      <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item">
+          <a [routerLink]="'/app/proveedor'">Listado</a>
+        </li>
+        <li class="breadcrumb-item active">Agregar</li>
+      </ol>
+    </div>
+    <div class="p-2 bd-highlight">
+      <button mat-raised-button color="accent" [routerLink]="'/app/proveedor'">
+        Atras
+      </button>
+    </div>
+
+  </div>
+
+
+
+  <!-- CUADRO 2 INICIO -->
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card mb-4">
+        <app-proveedor-card></app-proveedor-card>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="card mb-4">
+        <div class="card-header">
+          <i class="fa-solid fa-file-lines"></i>
+          Formulario
+        </div>
+        <div class="card-body">
+
+          <form (ngSubmit)= "formSubmit()">
+            <mat-form-field class="w100" appearance="outline">
+              <mat-label>Nombre</mat-label>
+              <input
+              required
+              autofocus
+              type="text"
+              name="nombre"
+              matInput
+              placeholder="Digite el nombre del proveedor"
+              [(ngModel)] = "proveedor.proveedor_nombre"
+    
+              >
+            </mat-form-field>
+    
+            <div class="container text-center mt15">
+              <button mat-raised-button color="primary" class="me-2">Guardar</button>
+              <button type="reset" mat-raised-button color="accent" class="ml20" >Limpiar</button>
+    
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- CUADRO 2 FIN -->
+            
+              
+</div>
+  

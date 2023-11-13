@@ -1,0 +1,53 @@
+<nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+<div class="sb-sidenav-menu">
+    <div class="nav">
+
+        <!-- BARRA C -->
+        <div class="sb-sidenav-menu-heading">Inicio</div>
+        <a class="nav-link" routerLink="/home">
+            <div class="sb-nav-link-icon" >
+              <mat-icon mat-list-icon>how_to_vote</mat-icon>
+            </div>
+            Home        
+        </a>
+        
+        <!-- BARRA C -->
+        <div class="sb-sidenav-menu-heading">Almacen</div>
+        <a class="nav-link" routerLink="/app/producto">
+            <div class="sb-nav-link-icon" >
+              <mat-icon mat-list-icon>how_to_vote</mat-icon>
+            </div>
+            Producto        
+        </a>
+        
+        <a class="nav-link" routerLink="/app/categoria">
+          <div class="sb-nav-link-icon" >
+            <mat-icon mat-list-icon>how_to_vote</mat-icon>
+          </div>
+          Categoría        
+        </a>
+
+        <a class="nav-link" routerLink="/app/proveedor">
+          <div class="sb-nav-link-icon" >
+            <mat-icon mat-list-icon>people_outline</mat-icon>
+          </div>
+          Proveedor        
+        </a>
+
+
+        <!-- BARRA C -->
+        <div class="sb-sidenav-menu-heading" *ngIf="isAdmin">Seguridad</div>
+        <a class="nav-link" routerLink="/app/usuario" *ngIf="isAdmin">
+          <div class="sb-nav-link-icon" >
+            <mat-icon mat-list-icon>people_outline</mat-icon>
+          </div>
+          Usuario        
+        </a>
+
+    </div>
+</div>
+<div class="sb-sidenav-footer">
+    <div class="small">Conectado con rol:</div>
+    {{rolName}}
+</div>
+</nav>

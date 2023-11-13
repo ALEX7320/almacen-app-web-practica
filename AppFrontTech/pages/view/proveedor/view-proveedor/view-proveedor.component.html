@@ -1,0 +1,74 @@
+
+<div class="container-fluid px-4">
+
+    <h1 class="mt-4">Proveedor</h1>
+    <div class="d-flex bd-highlight">
+      <div class="p-2 flex-grow-1 bd-highlight">
+        <ol class="breadcrumb mb-4">
+          <li class="breadcrumb-item active">Listado</li>
+        </ol>
+      </div>
+      <div class="p-2 bd-highlight">
+        <button routerLink="/app/add-proveedor" mat-raised-button color="primary" *ngIf="isAdmin">
+          Nuevo registro
+        </button>
+      </div>
+    </div>
+
+    <!-- CUADRO 2 INICIO -->
+    <div class="row">
+
+        <div class="col-lg-6">
+        <div class="card mb-4">
+           <app-proveedor-card></app-proveedor-card>
+        </div>
+        </div>
+
+        <div class="col-lg-6">
+        <div class="card mb-4">
+            <div class="card-header">
+              <i class="fa-solid fa-rectangle-list"></i>
+            Lista
+            </div>
+            <div class="card-body">
+
+              <!-- VISTA PARA ADMINISTRADRO -->
+              <mat-list *ngIf="isAdmin">
+                <div *ngFor = "let p of proveedor">
+                  <mat-list-item>
+                    <mat-icon mat-list-icon><i class="fa-solid fa-dolly"></i></mat-icon>
+                    <div mat-line><b>{{ p.proveedor_id }}</b></div>
+                    <div *ngIf = "p.proveedor_estado" mat-line>{{ p.proveedor_nombre }} <span class="badge rounded-pill bg-primary ms-2">Activo</span></div>
+                    <div *ngIf = "!p.proveedor_estado" mat-line>{{ p.proveedor_nombre }} <span class="badge rounded-pill bg-danger ms-2">Desactivado</span></div>
+                    <div>
+                      <button type="button" class="btn btn-success btn-sm me-1" [routerLink] = "'/app/proveedor/'+p.proveedor_id">
+                      <mat-icon mat-list-icon>edit</mat-icon>
+                      </button>                    
+                    </div>
+                    <mat-divider></mat-divider>
+                  </mat-list-item>
+                </div>
+              </mat-list>
+
+              <!-- VISTA PARA ALMACENERO -->
+              <mat-list *ngIf="!isAdmin">
+                <div *ngFor = "let p of proveedor">
+                  <mat-list-item *ngIf = "p.proveedor_estado">
+                    <mat-icon mat-list-icon><i class="fa-solid fa-dolly"></i></mat-icon>
+                    <div mat-line><b>{{ p.proveedor_id }}</b></div>
+                    <div mat-line>{{ p.proveedor_nombre }}</div>
+                    <mat-divider></mat-divider>
+                  </mat-list-item>
+                </div>
+              </mat-list>
+
+
+
+            </div>
+        </div>
+
+        </div>
+    </div>
+    <!-- CUADRO 2 FIN -->
+
+</div>

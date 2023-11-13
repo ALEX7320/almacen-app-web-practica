@@ -1,0 +1,77 @@
+.image-edit{
+
+    height: 100%;
+
+ object-fit: cover; 
+
+ object-fit: cover; object-position: 100% 0;
+}
+
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+body{
+    background:#eee;
+    font-family:sans-serif;
+}
+
+.banner-area{
+    width:100%;
+    height:100vh;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(https://i.postimg.cc/66gqmBQZ/FONDO.jpg);
+    background-size:cover;
+}        
+
+.content-area{
+    height:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
+    text-align: center;
+}
+
+.content h1{
+    font-size:80px;
+    color:#fff;
+}
+
+.content p{
+    font-size:30px;
+    color:#ddd;
+}
+
+.content .btn{
+    border:none;
+    outline:none;
+    padding:15px;
+    margin-top:100px;
+    border-radius: 4px;
+    color:#eee;
+    font-size: 18px;
+    cursor: pointer;    
+    background:#222;             
+}
+
+/* main area */
+
+.container {
+    width: 70%;
+    margin: 50px auto;
+    padding: 10px;
+}
+
+.container .box {
+    width: 100%;
+    padding: 50px;
+    background: #fff;
+    margin-top: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px -3px rgba(0, 0, 0, .1);
+}

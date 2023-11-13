@@ -1,0 +1,75 @@
+<div class="container bg-gradient-primarys">
+
+  <!-- Outer Row -->
+  <div class="row justify-content-center text-center">
+
+      <div class="col-xl-10 col-lg-12 col-md-9" >
+
+          <div class="card o-hidden border-0 shadow-lg my-5" style="height: 400px;">
+              <div class="card-body p-0">
+                  <!-- Nested Row within Card Body -->
+                  <div class="row">
+                      <div class="col-lg-6 d-none d-lg-block">
+                        <div class="card-titulo-page">
+                          <img src="https://i.postimg.cc/8Ccx9JwB/fondo-Login.jpg" />
+                          <div class="card-titulo-page-text">
+                            PixelTech
+                            App
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-6" >
+                          <div class="p-5">
+                              <div class="text-center mt-5">
+                                  <h1 class="h4 text-gray-900 mb-4 fs-1">Login</h1>
+                              </div>
+
+
+                              <form class="user" (ngSubmit)="formSubmit()">
+                                
+                                  <div class="form-group">
+                                    <!-- USUARIO -->
+                                    <input class="form-control form-control-user mb-3"
+                                        placeholder="Enter Email Address..."
+                                        required
+                                        [(ngModel)]="loginData.username"
+                                        placeholder="Digite su nombre de usuario"
+                                        name="username"
+                                        >
+                                  </div>
+                                  <div class="form-group">
+                                    <!-- CONTRASEÑA -->
+                                    <input class="form-control form-control-user mb-4"
+                                      required
+                                      [(ngModel)]="loginData.password"
+                                      type="password"
+                                      placeholder="Digite su contraseña"
+                                      name="password"
+                                      autocomplete="on"
+                                    >
+                                  </div>
+
+
+                                  <button mat-raised-button color="primary" class="me-2">Iniciar sesion</button>
+                                  <button
+                                    type="reset"
+                                    mat-raised-button
+                                    color="accent"
+                                    class="ml20"
+                                  >
+                                    Limpiar
+                                  </button>
+                              </form>
+         
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+
+  </div>
+
+</div>

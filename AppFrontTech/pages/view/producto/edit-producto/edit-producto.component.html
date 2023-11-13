@@ -1,0 +1,119 @@
+<div class="container-fluid px-4">
+
+  <h1 class="mt-4">Producto</h1>
+  <div class="d-flex bd-highlight">
+    <div class="p-2 flex-grow-1 bd-highlight">
+      <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item">
+          <a [routerLink]="'/app/producto'">Listado</a>
+        </li>
+        <li class="breadcrumb-item active">Actualizar</li>
+      </ol>
+    </div>
+    <div class="p-2 bd-highlight">
+      <button mat-raised-button color="accent" [routerLink]="'/app/producto'">
+        Atras
+      </button>
+    </div>
+  </div>
+
+  <!-- CUADRO 2 INICIO -->
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="card mb-4">
+
+        <div class="card-body text-center">
+
+
+          <img src="{{ imagen }}" class="img-fluid imagen_table" alt="Imagen Porducto">
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-8">
+      <div class="card mb-4">
+        <div class="card-header">
+          <i class="fa-solid fa-file-lines"></i>
+           Formulario
+        </div>
+        <div class="card-body">
+
+          <form *ngIf="producto" (submit) = "actualizarDatos()">
+
+            <mat-form-field class="w100" appearance="fill">
+            <mat-label>Nombre</mat-label>
+              <input
+              [(ngModel)] = "producto.producto_nombre"
+              type="text"
+              name="nombre"
+              required
+              placeholder="Digite el nombre de producto"
+              matInput>
+            </mat-form-field>
+    
+            <mat-form-field class="w100" appearance="fill">
+              <mat-label>Imagen Url</mat-label>
+                <input
+                [(ngModel)] = "producto.producto_imagen"
+                type="text"
+                name="imagen"
+                required
+                placeholder="Inserte la imagen Url"
+                matInput
+                (ngModelChange)="imageValuechange($event)"
+                >
+            </mat-form-field>
+    
+            <mat-form-field class="w100" appearance="fill">
+              <mat-label>Descripción</mat-label>
+              <textarea
+                [(ngModel)] = "producto.producto_descripcion"
+                type="text"
+                name="descripcion"
+                placeholder="Digite la descripción"
+                matInput
+                rows="8">
+              </textarea>
+            </mat-form-field>
+    
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field class="w100" appearance="fill">
+                  <mat-label>Precio en Soles</mat-label>
+                  <input
+                  required
+                  [(ngModel)] = "producto.producto_precio"
+                  type="number"
+                  step="0.01"
+                  name="precio"
+                  placeholder="Digite el precio"
+                  matInput>
+                </mat-form-field>
+              </div>
+    
+              <div class="col-md-6">
+                <mat-form-field class="w100" appearance="fill">
+                  <mat-label>Categorías</mat-label>
+                  <mat-select name="categoria" [(ngModel)] = "producto.categoria_id.categoria_id">
+                    <mat-option *ngFor = "let c of categoria" [value] = "c.categoria_id">
+                      {{ c.categoria_nombre }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+    
+    
+            <div class="container text-center">
+              <button mat-raised-button color="primary" class="me-2">Actualizar</button>
+              <button type="reset" mat-raised-button color="accent" class="ml20" >Limpiar</button>
+            </div>
+          </form>
+    
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- CUADRO 2 FIN -->
+</div>

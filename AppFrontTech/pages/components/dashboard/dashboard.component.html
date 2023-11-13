@@ -1,0 +1,36 @@
+<app-navbar></app-navbar>
+
+<!-- ENTORNO -->
+<div id="layoutSidenav">
+
+  <!-- BARRA LATERAL -->
+  <div id="layoutSidenav_nav">
+      <app-sidebar></app-sidebar>
+  </div>
+
+  <!-- CONTENIDO -->
+  <div id="layoutSidenav_content">
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+      <footer class="py-4 bg-light mt-auto">
+          <div class="container-fluid px-4">
+              <div class="d-flex align-items-center justify-content-between small">
+                  <div class="text-muted">Copyright &copy; PixelTech 2023</div>
+                  <div>
+                  </div>
+              </div>
+          </div>
+      </footer>
+  </div>
+</div>
+
+
+
+
+
+<!-- 
+
+https://youtu.be/rUMUck9Afjs?t=1093
+
+-->

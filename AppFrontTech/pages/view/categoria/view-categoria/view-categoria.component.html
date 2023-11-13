@@ -1,0 +1,73 @@
+<div class="container-fluid px-4">
+
+  <h1 class="mt-4">Categoría</h1>
+  <div class="d-flex bd-highlight">
+    <div class="p-2 flex-grow-1 bd-highlight">
+      <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">Listado</li>
+      </ol>
+    </div>
+    <div class="p-2 bd-highlight">
+      <button routerLink="/app/add-categoria" mat-raised-button color="primary" *ngIf="isAdmin">
+        Nuevo registro
+      </button>
+    </div>
+  </div>
+
+
+  <!-- CUADRO 2 INICIO -->
+  <div class="row">
+
+    
+    <div class="col-lg-6">
+      <div class="card mb-4">
+        <app-categoria-card></app-categoria-card>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="card mb-4">
+        <div class="card-header">
+          <i class="fa-solid fa-rectangle-list"></i>
+          Lista
+        </div>
+        <div class="card-body">
+
+          <!-- VISTA PARA ADMINISTRADRO -->
+          <mat-list  *ngIf="isAdmin">
+            <div *ngFor = "let c of categoria">
+              <mat-list-item>
+                <mat-icon mat-list-icon><i class="fa-solid fa-tag"></i></mat-icon>
+                <div mat-line><b>{{ c.categoria_id }}</b></div>
+                <div *ngIf = "c.categoria_estado" mat-line>{{ c.categoria_nombre }} <span class="badge rounded-pill bg-primary ms-2">Activo</span></div>
+                <div *ngIf = "!c.categoria_estado" mat-line>{{ c.categoria_nombre }} <span class="badge rounded-pill bg-danger ms-2">Desactivado</span></div>
+                <div>
+                  <button type="button" class="btn btn-success btn-sm me-1" [routerLink] = "'/app/categoria/'+c.categoria_id">
+                    <mat-icon mat-list-icon>edit</mat-icon>
+                  </button>                 
+                </div>
+                <mat-divider></mat-divider>
+              </mat-list-item>
+            </div>
+          </mat-list>
+          
+          <!-- VISTA PARA ALMACENERO -->
+          <mat-list *ngIf="!isAdmin">
+            <div *ngFor = "let c of categoria">
+              <mat-list-item *ngIf = "c.categoria_estado">
+                <mat-icon mat-list-icon><i class="fa-solid fa-tag"></i></mat-icon>
+                <div mat-line><b>{{ c.categoria_id }}</b></div>
+                <div mat-line>{{ c.categoria_nombre }}</div>
+                <mat-divider></mat-divider>
+              </mat-list-item>
+            </div>
+          </mat-list>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- CUADRO 2 FIN -->
+
+</div>

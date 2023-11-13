@@ -1,0 +1,118 @@
+<div class="container-fluid px-4">
+
+  <h1 class="mt-4 d-flex align-items-center">Producto&nbsp;
+    <h4 style="display: inline;"><span class="badge bg-secondary rounded-pill">Salida</span></h4>
+  </h1>
+  <div class="d-flex bd-highlight">
+    <div class="p-2 flex-grow-1 bd-highlight">
+      <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item">
+          <a [routerLink] = "'/app/producto'">Listado</a>
+        </li>
+        <li class="breadcrumb-item active">Salida 
+        </li>
+      </ol>
+    </div>
+    <div class="p-2 bd-highlight">
+      <button mat-raised-button color="primary" [routerLink] = "'/app/salida/producto/'+producto.producto_id+'/add-salida'" >
+        Registrar salida
+      </button>
+    </div>
+    <div class="p-2 bd-highlight">
+      <button mat-raised-button color="accent" [routerLink] = "'/app/producto'" >
+        Atras
+      </button>
+    </div>
+  </div>
+
+
+  <!-- CUADRO 2 INICIO -->
+  <div class="row">
+    <div class="col-lg-6">
+        <div class="card mb-4">
+
+            <div class="card border-0" style="max-width: 100%;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                    <img src="{{producto.producto_imagen}}" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{producto.producto_nombre}}</h5>
+                            <p class="card-text"></p>
+                            <p class="card-text"><b>Descripción: </b> {{producto.producto_descripcion}}</p>
+                            <p class="card-text"><b>Precio: </b> s/ {{producto.producto_precio}}</p>
+                            <p class="card-text">
+                                <small class="text-muted">
+                                  <span class="badge bg-primary">
+                                    <i class="fa-solid fa-tags"></i> {{producto.categoria_id.categoria_nombre}}
+                                  </span>
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-footer small text-muted">Producto ID: {{producto.producto_id}}</div>
+
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="card mb-4">
+            <table mat-table [dataSource]="salida" class="mat-elevation-z0 demo-table">
+
+                <ng-container matColumnDef="salida_id">
+                  <th mat-header-cell *matHeaderCellDef class="card-header">ID</th>
+                  <td mat-cell *matCellDef="let element">{{ element.salida_id }}</td>
+                </ng-container>
+          
+      
+                <ng-container matColumnDef="salida_fecha">
+                  <th mat-header-cell *matHeaderCellDef class="card-header">Fecha</th>
+                  <td mat-cell *matCellDef="let element">{{ element.salida_fecha }}</td>
+                </ng-container>
+      
+                <ng-container matColumnDef="salida_cantidad">
+                  <th mat-header-cell *matHeaderCellDef class="card-header">Cantidad</th>
+                  <td mat-cell *matCellDef="let element">{{ element.salida_cantidad }}</td>
+                </ng-container>
+          
+                <ng-container matColumnDef="salida_detalle">
+                  <th mat-header-cell *matHeaderCellDef class="card-header">Detalle</th>
+                  <td mat-cell *matCellDef="let element">{{ element.salida_detalle }}</td>
+                </ng-container>
+          
+          
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef class="card-header">Acción</th>
+                  <td mat-cell *matCellDef="let element">
+                    <mat-card-actions>
+          
+                      <button type="button" class="btn btn-success btn-sm me-1"
+                          [routerLink] = "'/app/salida/'+element.salida_id+'/producto/'+producto.producto_id" >
+                        <mat-icon mat-list-icon>edit</mat-icon>
+                      </button>
+                                  
+                      <button type="button" class="btn btn-danger btn-sm me-1"
+                      (click) = "eliminarSalida(element.salida_id)">
+                        <mat-icon mat-list-icon>delete_outline</mat-icon>
+                      </button>
+                                  
+                    </mat-card-actions>
+          
+                  </td>
+                </ng-container>
+          
+      
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+              </table>
+            
+        </div>
+    </div>
+  </div>
+    <!-- CUADRO 2 FIN -->
+        
+</div>

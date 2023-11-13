@@ -1,0 +1,122 @@
+<div class="container-fluid px-4">  
+
+    <h1 class="mt-4 d-flex align-items-center">Producto&nbsp;
+        <h4 style="display: inline;"><span class="badge bg-secondary rounded-pill">Salida</span></h4>
+    </h1>
+    <div class="d-flex bd-highlight">
+        <div class="p-2 flex-grow-1 bd-highlight">
+            <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item">
+                <a [routerLink] = "'/app/producto'">Listado</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a [routerLink] = "'/app/salida/producto/'+producto.producto_id">Salida</a>
+                </li>
+            <li class="breadcrumb-item active">Editar 
+            </li>
+            </ol>
+        </div>
+        <div class="p-2 bd-highlight">
+            <button mat-raised-button color="accent" [routerLink] = "'/app/salida/producto/'+producto.producto_id">
+              Atras
+            </button>
+        </div>
+    </div>
+
+<!-- CUADRO 2 INICIO -->
+<div class="row">
+    <div class="col-lg-6">
+        <div class="card mb-4">
+
+            <div class="card border-0" style="max-width: 100%;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                    <img src="{{producto.producto_imagen}}" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{producto.producto_nombre}}</h5>
+                            <p class="card-text"></p>
+                            <p class="card-text"><b>Descripción: </b> {{producto.producto_descripcion}}</p>
+                            <p class="card-text"><b>Precio: </b> s/ {{producto.producto_precio}}</p>
+                            <p class="card-text">
+                                <small class="text-muted">
+                                    <span class="badge bg-primary">
+                                        <i class="fa-solid fa-tags"></i> {{producto.categoria_id.categoria_nombre}}</span>
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-footer small text-muted">Producto ID: {{producto.producto_id}}</div>
+
+        </div>
+    </div>
+
+        <div class="col-lg-6">
+            <div class="card mb-4">
+            <div class="card-header">
+                <i class="fa-solid fa-file-lines"></i>
+                Formulario
+            </div>
+            <div class="card-body">
+
+                <form *ngIf="salida" (submit) = "actualizarSalida()">
+
+           
+                    <div class="row">
+                        <div class="col-md-6">
+                          <mat-form-field class="w100" appearance="fill">
+                            <mat-label>Cantidad</mat-label>
+                            <input
+                            required
+                            [(ngModel)] = "salida.salida_cantidad"
+                            type="number"
+                            step="1"
+                            name="cantidad"
+                            placeholder="Digite el precio del producto"
+                            matInput>
+                          </mat-form-field>
+                        </div>
+              
+                        <div class="col-md-6">
+                            <mat-form-field class="w100" appearance="fill">
+                                <mat-label>Fecha</mat-label>
+                                <input
+                                required
+                                [(ngModel)] = "salida.salida_fecha"
+                                type="date"
+                                name="fecha"
+                                matInput>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+           
+                    <mat-form-field class="w100" appearance="fill">
+                      <mat-label>Descripción</mat-label>
+                      <textarea
+                      [(ngModel)] = "salida.salida_detalle"
+                      type="text"
+                      name="descripcion"
+                      placeholder="Digite la descripción"
+                      matInput
+                      rows="8"></textarea>
+                    </mat-form-field>
+            
+            
+                    <div class="container text-center">
+                      <button mat-raised-button color="primary" class="me-2">Actualizar</button>
+                      <button type="reset" mat-raised-button color="accent" class="ml20" >Limpiar</button>
+                    </div>
+                </form>
+
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CUADRO 2 FIN -->
+</div>

@@ -1,0 +1,100 @@
+<div class="container-fluid px-4">
+
+  <h1 class="mt-4">Producto</h1>
+  <div class="d-flex bd-highlight">
+    <div class="p-2 flex-grow-1 bd-highlight">
+      <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">Listado</li>
+      </ol>
+    </div>
+    <div class="p-2 bd-highlight">
+      <button routerLink="/app/add-producto" mat-raised-button color="primary">
+        Nuevo registro
+      </button>
+    </div>
+  </div>
+
+
+  <!-- CUADRO 1 INICIO -->
+  <div class="card mb-4">
+      
+      <table mat-table [dataSource]="producto" class="mat-elevation-z0 demo-table">
+        <ng-container matColumnDef="producto_id">
+          <th mat-header-cell *matHeaderCellDef class="card-header">ID</th>
+          <td mat-cell *matCellDef="let element">{{ element.producto_id }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="producto_imagen">
+          <th mat-header-cell *matHeaderCellDef class="card-header">Imagen</th>
+          <td mat-cell *matCellDef="let element">
+            <img
+              src="{{ element.producto_imagen }}"
+              class="img-thumbnail imagen_table"
+              alt="Imagen"
+            />
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="producto_nombre">
+          <th mat-header-cell *matHeaderCellDef class="card-header">Nombre</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.producto_nombre }} <br />
+            <b>Descipcion: </b> {{ element.producto_descripcion }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="producto_precio">
+          <th mat-header-cell *matHeaderCellDef class="card-header">Precio</th>
+          <td mat-cell *matCellDef="let element">s/ {{ element.producto_precio }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="categoria_id">
+          <th mat-header-cell *matHeaderCellDef class="card-header">Categoría</th>
+          <td mat-cell *matCellDef="let element">
+            <h6>
+              <span class="badge bg-secondary">{{
+                element.categoria_id.categoria_nombre
+              }}</span>
+            </h6>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef class="card-header">Accion</th>
+          <td mat-cell *matCellDef="let element">
+            <mat-card-actions>
+
+              <button type="button" class="btn btn-primary btn-sm me-1"  [routerLink] = "'/app/ingreso/producto/'+element.producto_id">
+                <mat-icon mat-list-icon>move_to_inbox</mat-icon>
+              </button>
+
+              <button type="button" class="btn btn-secondary btn-sm me-1" [routerLink] = "'/app/salida/producto/'+element.producto_id">
+                <mat-icon mat-list-icon>inbox inbox icon</mat-icon>
+              </button>
+
+
+              <button type="button" class="btn btn-success btn-sm me-1" [routerLink] = "'/app/producto/'+element.producto_id" >
+                <mat-icon mat-list-icon>edit</mat-icon>
+              </button>
+                          
+              <button type="button" class="btn btn-danger btn-sm me-1" (click) = "eliminarProducto(element.producto_id)" *ngIf="isAdmin">
+                <mat-icon mat-list-icon>delete_outline</mat-icon>
+              </button>
+
+    
+            </mat-card-actions>
+
+          </td>
+        </ng-container>
+
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+
+  </div>
+  <!-- CUADRO 1 FIN -->
+
+
+</div>

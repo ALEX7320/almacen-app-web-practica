@@ -1,0 +1,9 @@
+{
+    "/servidor/*":{
+        "target": "http://localhost:8090/tech",
+        "secure": false,
+        "pathRewrite": {
+            "^/servidor": ""
+        }
+    }
+}

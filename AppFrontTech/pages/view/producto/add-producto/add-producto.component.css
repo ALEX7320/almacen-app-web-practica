@@ -1,0 +1,13 @@
+.w100{
+    width: 100%;
+  }
+  
+
+  
+.imagen_table{
+
+  width:400px;
+  height: auto;
+
+  object-fit: cover;    
+}
