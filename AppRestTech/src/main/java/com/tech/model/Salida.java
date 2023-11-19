@@ -14,7 +14,15 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name="Salida")
 public class Salida {
@@ -43,63 +51,6 @@ public class Salida {
 	private Producto producto_id;
 
     
-	public Salida() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public Salida(Integer salida_id, Date salida_fecha, Integer salida_cantidad, String salida_detalle,
-			Producto producto_id) {
-		super();
-		this.salida_id = salida_id;
-		this.salida_fecha = salida_fecha;
-		this.salida_cantidad = salida_cantidad;
-		this.salida_detalle = salida_detalle;
-		this.producto_id = producto_id;
-	}
-
-
-	public Integer getSalida_id() {
-		return salida_id;
-	}
-
-	public void setSalida_id(Integer salida_id) {
-		this.salida_id = salida_id;
-	}
-
-	public Date getSalida_fecha() {
-		return salida_fecha;
-	}
-
-	public void setSalida_fecha(Date salida_fecha) {
-		this.salida_fecha = salida_fecha;
-	}
-
-	public Integer getSalida_cantidad() {
-		return salida_cantidad;
-	}
-
-	public void setSalida_cantidad(Integer salida_cantidad) {
-		this.salida_cantidad = salida_cantidad;
-	}
-
-	public String getSalida_detalle() {
-		return salida_detalle;
-	}
-
-	public void setSalida_detalle(String salida_detalle) {
-		this.salida_detalle = salida_detalle;
-	}
-
-	public Producto getProducto_id() {
-		return producto_id;
-	}
-
-	public void setProducto_id(Producto producto_id) {
-		this.producto_id = producto_id;
-	}
-
-
     
 
 }

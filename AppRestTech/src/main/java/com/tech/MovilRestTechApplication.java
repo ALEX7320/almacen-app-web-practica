@@ -16,16 +16,7 @@ public class MovilRestTechApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
-		System.out.println("\n\n//USUARIO ADMIN POR DEFECTO//"); 
-		System.out.println("* username: admin"); 
-		System.out.println("* password: admin"); 
-		System.out.println("* rol: ADMIN\n");
-		
-		System.out.println("\n//USUARIO ALMACENERO POR DEFECTO//"); 
-		System.out.println("* username: almacen"); 
-		System.out.println("* password: admin"); 
-		System.out.println("* rol: ALMACENERO\n\n"); 
-
+		System.out.println("BackEnd Iniciado");
 		
 	}
 

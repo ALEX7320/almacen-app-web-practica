@@ -1,14 +1,14 @@
 -- ROL 
-INSERT INTO `database_tech`.`roles`(`rol_id`,`rol_nombre`) VALUES (1,'ADMIN');
-INSERT INTO `database_tech`.`roles`(`rol_id`,`rol_nombre`) VALUES (2,'ALMACENERO');
+INSERT INTO `database_tech`.`roles`(`rolId`,`rolNombre`) VALUES (1,'ADMIN');
+INSERT INTO `database_tech`.`roles`(`rolId`,`rolNombre`) VALUES (2,'ALMACENERO');
 
 -- USUARIO
-INSERT INTO `database_tech`.`usuarios` (`usuario_id`,`apellido`,`direccion`,`dni`,`email`,`enabled`,`nombre`,`password`,`telefono`,`username`) VALUES (1,'Noriega Rea','Av. Santa Catre 73X4','03465174','luz@admin.pe',1,'Luz','$2a$10$EYsfxY3ugTCyOweJc4RGROKA5/2x2OiLlrioxp2Gn0c42RRjWLfFa','987654322','admin');
-INSERT INTO `database_tech`.`usuarios` (`usuario_id`,`apellido`,`direccion`,`dni`,`email`,`enabled`,`nombre`,`password`,`telefono`,`username`) VALUES (2,'Ui Lessoz','Jr. Nueva Re 3X05','87643160','jorge@admin.pe',1,'Jorge','$2a$10$EYsfxY3ugTCyOweJc4RGROKA5/2x2OiLlrioxp2Gn0c42RRjWLfFa','954376151','almacen');
+INSERT INTO `database_tech`.`usuarios` (`usuarioId`,`apellido`,`direccion`,`dni`,`email`,`enabled`,`nombre`,`password`,`telefono`,`username`) VALUES (1,'Noriega Rea','Av. Santa Catre 73X4','03465174','luz@admin.pe',1,'Luz','$2a$10$EYsfxY3ugTCyOweJc4RGROKA5/2x2OiLlrioxp2Gn0c42RRjWLfFa','987654322','admin');
+INSERT INTO `database_tech`.`usuarios` (`usuarioId`,`apellido`,`direccion`,`dni`,`email`,`enabled`,`nombre`,`password`,`telefono`,`username`) VALUES (2,'Ui Lessoz','Jr. Nueva Re 3X05','87643160','jorge@admin.pe',1,'Jorge','$2a$10$EYsfxY3ugTCyOweJc4RGROKA5/2x2OiLlrioxp2Gn0c42RRjWLfFa','954376151','almacen');
 
 -- ROL USUARIO
-INSERT INTO `database_tech`.`usuario_rol`(`usuario_id`,`rol_id`) VALUES (2,2);
-INSERT INTO `database_tech`.`usuario_rol`(`usuario_id`,`rol_id`) VALUES (1,1);
+INSERT INTO `database_tech`.`usuario_rol`(`usuarioId`,`rolId`) VALUES (2,2);
+INSERT INTO `database_tech`.`usuario_rol`(`usuarioId`,`rolId`) VALUES (1,1);
 
 -- PROVEEDOR
 INSERT INTO `database_tech`.`proveedor` (`proveedor_id`, `proveedor_nombre`, `proveedor_estado`) VALUES ('1', 'TECNO MALL E.I.R.L.', '1');

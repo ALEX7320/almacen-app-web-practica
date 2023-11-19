@@ -90,9 +90,9 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- Table `database_tech`.`roles`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `database_tech`.`roles` (
-  `rol_id` INT NOT NULL,
-  `rol_nombre` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`rol_id`))
+  `rolId` INT NOT NULL,
+  `rolNombre` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`rolId`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
@@ -121,7 +121,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- Table `database_tech`.`usuarios`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `database_tech`.`usuarios` (
-  `usuario_id` INT NOT NULL AUTO_INCREMENT,
+  `usuarioId` INT NOT NULL AUTO_INCREMENT,
   `apellido` VARCHAR(255) NOT NULL,
   `direccion` VARCHAR(255) NOT NULL,
   `dni` VARCHAR(255) NOT NULL,
@@ -131,8 +131,10 @@ CREATE TABLE IF NOT EXISTS `database_tech`.`usuarios` (
   `password` VARCHAR(255) NOT NULL,
   `telefono` VARCHAR(255) NOT NULL,
   `username` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`usuario_id`)
-  )
+  PRIMARY KEY (`usuarioId`),
+  UNIQUE `UK_ggd9d47p8x7m0ajavk1ayuyqs` (`dni` ASC) VISIBLE,
+  UNIQUE `UK_kfsp0s1tflm1cwlj8idhqsad0` (`email` ASC) VISIBLE,
+  UNIQUE `UK_m2dvbwfge291euvmk6vkkocao` (`username` ASC) VISIBLE)
 ENGINE = InnoDB
 AUTO_INCREMENT = 4
 DEFAULT CHARACTER SET = utf8mb4
@@ -143,14 +145,14 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- Table `database_tech`.`usuario_rol`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `database_tech`.`usuario_rol` (
-  `usuario_id` INT NOT NULL,
-  `rol_id` INT NOT NULL,
+  `usuarioId` INT NOT NULL,
+  `rolId` INT NOT NULL,
   CONSTRAINT `FKe3kd49gu3mhj2ty5kl44qsytp`
-    FOREIGN KEY (`rol_id`)
-    REFERENCES `database_tech`.`roles` (`rol_id`),
+    FOREIGN KEY (`rolId`)
+    REFERENCES `database_tech`.`roles` (`rolId`),
   CONSTRAINT `FKktsemf1f6awjww4da0ocv4n32`
-    FOREIGN KEY (`usuario_id`)
-    REFERENCES `database_tech`.`usuarios` (`usuario_id`))
+    FOREIGN KEY (`usuarioId`)
+    REFERENCES `database_tech`.`usuarios` (`usuarioId`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;

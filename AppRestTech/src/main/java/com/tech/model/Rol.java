@@ -6,10 +6,18 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
-@Table(name = "roles")
+@Table(name="roles")
 public class Rol {
 	
     @Id
@@ -19,35 +27,5 @@ public class Rol {
 	@Basic(optional=false) // este campo ES obligatorio
 	@Column(name="rolNombre")
     private String rolNombre;
-
-    public Rol(){
-
-    }
-
-     public Rol(Integer rolId, String rolNombre) {
-		super();
-		this.rolId = rolId;
-		this.rolNombre = rolNombre;
-	}
-
-
-	public Integer getRolId() {
-		return rolId;
-	}
-
-
-	public void setRolId(Integer rolId) {
-		this.rolId = rolId;
-	}
-
-
-	public String getRolNombre() {
-        return rolNombre;
-    }
-
-    public void setRolNombre(String rolNombre) {
-        this.rolNombre = rolNombre;
-    }
-    
 
 }

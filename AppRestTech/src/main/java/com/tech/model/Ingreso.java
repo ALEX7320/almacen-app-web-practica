@@ -14,7 +14,15 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name="Ingreso")
 public class Ingreso {
@@ -45,73 +53,6 @@ public class Ingreso {
     @JoinColumn(name = "proveedor_id", referencedColumnName = "proveedor_id")
     @ManyToOne(optional = false)
 	private Proveedor proveedor_id;
-
-	public Ingreso() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public Ingreso(Integer ingreso_id, Date ingreso_fecha, Integer ingreso_cantidad, String ingreso_detalle,
-			Producto producto_id, Proveedor proveedor_id) {
-		super();
-		this.ingreso_id = ingreso_id;
-		this.ingreso_fecha = ingreso_fecha;
-		this.ingreso_cantidad = ingreso_cantidad;
-		this.ingreso_detalle = ingreso_detalle;
-		this.producto_id = producto_id;
-		this.proveedor_id = proveedor_id;
-	}
-
-
-
-	public Integer getIngreso_id() {
-		return ingreso_id;
-	}
-
-	public void setIngreso_id(Integer ingreso_id) {
-		this.ingreso_id = ingreso_id;
-	}
-
-	public Date getIngreso_fecha() {
-		return ingreso_fecha;
-	}
-
-	public void setIngreso_fecha(Date ingreso_fecha) {
-		this.ingreso_fecha = ingreso_fecha;
-	}
-
-	public Integer getIngreso_cantidad() {
-		return ingreso_cantidad;
-	}
-
-	public void setIngreso_cantidad(Integer ingreso_cantidad) {
-		this.ingreso_cantidad = ingreso_cantidad;
-	}
-
-	public String getIngreso_detalle() {
-		return ingreso_detalle;
-	}
-
-	public void setIngreso_detalle(String ingreso_detalle) {
-		this.ingreso_detalle = ingreso_detalle;
-	}
-
-	public Producto getProducto_id() {
-		return producto_id;
-	}
-
-	public void setProducto_id(Producto producto_id) {
-		this.producto_id = producto_id;
-	}
-
-	public Proveedor getProveedor_id() {
-		return proveedor_id;
-	}
-
-	public void setProveedor_id(Proveedor proveedor_id) {
-		this.proveedor_id = proveedor_id;
-	}
-       
 
 		
 }
