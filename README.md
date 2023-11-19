@@ -1,5 +1,7 @@
 # Proyecto de Practica: Control de almacén
 
+Proyecto realizado con fines educativos.
+
 **Credenciales por defecto**
 
 | Usuario | Contraseña | Rol |
@@ -83,14 +85,28 @@
 		<artifactId>jjwt</artifactId>
 		<version>0.9.1</version>
 	</dependency>
-
+	
+	<dependency>
+		<groupId>org.projectlombok</groupId>
+		<artifactId>lombok</artifactId>
+		<scope>provided</scope>
+	</dependency>
+		
 </dependencies>
 ```
 
 # Base de datos
 
+## Esquema
+
 ![](https://i.postimg.cc/Ph7P99d2/mode-bd-222303.png)
 
+### Instalar
+
+Instalar los script de `BASE_DE_DATOS` en el siguiente orden
+
+* SCRIPT_BD
+* INSERT_DATOS_BD
 
 # Detalles del BackEnd
 
@@ -166,3 +182,4 @@ ng serve --port 4200 --proxy-config proxy.conf.json
 > Los números de documentos, número de contacto fuergon generados de manera áleatoria con la libería Randint de Python. 
 > Los nombres y apellidos fueron brindados por ChatGPT. 
 > Iconos e imagenes de productos obtenidos de https://www.flaticon.es & https://www.craiyon.com
+> Plantilla Bootstrap extraído de https://startbootstrap.com/themes
