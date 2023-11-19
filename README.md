@@ -203,6 +203,9 @@ ng serve --port 4200 --proxy-config proxy.conf.json
 # Consideración
 
 > Los números de documentos, número de contacto fuergon generados de manera áleatoria con la libería Randint de Python. 
+
 > Los nombres y apellidos fueron brindados por ChatGPT. 
+
 > Iconos e imagenes de productos obtenidos de https://www.flaticon.es & https://www.craiyon.com
+
 > Plantilla Bootstrap extraído de https://startbootstrap.com/themes
