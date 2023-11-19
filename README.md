@@ -2,6 +2,23 @@
 
 Proyecto realizado con fines educativos.
 
+* [Entorno de desarrollo](#entorno-de-desarrollo)
+* [Dependencias:](#dependencias)
+    - [Dependencias: Angular](#dependencias-angular)
+    - [Dependencias: SpringBoot](#dependencias-springboot)
+* [Base de datos](#base-de-datos)
+    - [Esquema](#esquema)
+    - [Instalar](#instalar)
+* [Detalles del BackEnd](#detalles-del-backend)
+* [Conexión con el FrontEnd](#conexión-con-el-frontend)
+* [Desplegar el FrontEnd](#desplegar-el-frontend)
+* [Previsualización](#previsualización)
+* [Guía de apoyo](#guía-de-apoyo)
+* [Versión](#versión)
+* [Consideración](#consideración)
+
+
+
 **Credenciales por defecto**
 
 | Usuario | Contraseña | Rol |
@@ -21,8 +38,9 @@ Proyecto realizado con fines educativos.
 | Node.js  | 18.13.0 |
 | MySQL Workbench 8.0 | 8.0.31 |
 
+# Dependencias
 
-# Dependencias: Angular 
+## Dependencias: Angular 
 
 - Angular material `ng add @angular/material@14.0.0`
 
@@ -32,7 +50,7 @@ Proyecto realizado con fines educativos.
 
 - JQuery `npm i --save-dev @types/jquery`, `npm install jquery@3.6.4`
 
-# Dependencias: SpringBoot 
+## Dependencias: SpringBoot 
 
 ```xml
 <dependencies>
@@ -176,6 +194,11 @@ ng serve --port 4200 --proxy-config proxy.conf.json
 - [Curso de Spring Boot y Angular - Autenticación con JWT y Spring Security](https://youtu.be/RWT7sZvgbeY?si=mDe9-sGn8r5wl5_T "")
 - [ANGULAR / USANDO PROXI EN ANGULAR](https://youtu.be/47VR0YA9zJ4 "")
 - [Cargar imagen Angular](https://es.stackoverflow.com/questions/168364/cargar-imagen-angular "")
+
+
+# Versión
+
+* Versión 1.1: Correción de `application.properties` para la conexión con la base de datos.
 
 # Consideración
 
