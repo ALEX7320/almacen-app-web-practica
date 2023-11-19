@@ -117,7 +117,7 @@ Proyecto realizado con fines educativos.
 
 ## Esquema
 
-![](https://i.postimg.cc/Ph7P99d2/mode-bd-222303.png)
+![](https://i.postimg.cc/BJTSKNw4/123.png)
 
 ### Instalar
 
